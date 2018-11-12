@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Whisky } from '../whisky';
+import { WHISKYS } from '../mock-whiskys';
 
 @Component({
   selector: 'app-whiskys',
@@ -8,22 +9,16 @@ import { Whisky } from '../whisky';
 })
 export class WhiskysComponent implements OnInit {
 
-  whisky: Whisky = {
-    id: 1,
-    name: 'Chivas Regal',
-    type: 'blend',
-    content: '70cl',
-    age: 12,
-    prize: 38,
-    rating: 8.5,
-    brewery_id: 1
-  }
+  whiskys = WHISKYS;
+  selectedWhisky: Whisky;
 
   constructor() { }
 
   ngOnInit() {
   }
 
-
+  onSelect(whisky: Whisky): void {
+  this.selectedWhisky = whisky;
+}
 
 }

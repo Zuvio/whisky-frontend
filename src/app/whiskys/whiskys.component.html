@@ -1,3 +1,10 @@
-<p>
-  whiskys works!
-</p>
+<h2>List of all whiskys</h2>
+<ul class="whiskys">
+  <li *ngFor="let whisky of whiskys" 
+    [class.selected]="whisky === selectedWhisky"
+    (click)="onSelect(whisky)">
+    <span class="badge">{{whisky.id}}</span> {{whisky.name}}
+  </li>
+</ul>
+
+<app-whisky-detail [whisky]="selectedWhisky"></app-whisky-detail>
