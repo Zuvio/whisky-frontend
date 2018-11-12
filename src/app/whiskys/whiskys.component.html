@@ -1,9 +1,9 @@
 <h2>List of all whiskys</h2>
 <ul class="whiskys">
-  <li *ngFor="let whisky of whiskys" 
-    [class.selected]="whisky === selectedWhisky"
-    (click)="onSelect(whisky)">
+  <li *ngFor="let whisky of whiskys">
+      <a routerLink="/detail/{{whisky.id}}">
     <span class="badge">{{whisky.id}}</span> {{whisky.name}}
+    </a>
   </li>
 </ul>
 

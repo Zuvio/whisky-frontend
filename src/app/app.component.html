@@ -1,6 +1,9 @@
-<h1>
-    {{ title }}
-</h1>
-<img width="350" src="../assets/images/bottle_main.jpg" style="float:right">
-<app-whiskys></app-whiskys>
+<h1>{{ title }}</h1>
+<nav>
+  <a routerLink="/dashboard">Dashboard</a>
+  <a routerLink="/whiskys">Whiskys</a>
+</nav>
 <router-outlet></router-outlet>
+<app-messages></app-messages>
+
+<img width="350" src="../assets/images/bottle_main.jpg" style="float:right">

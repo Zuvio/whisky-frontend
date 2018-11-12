@@ -1,16 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { Whisky } from '../whisky';
-import { WHISKYS } from '../mock-whiskys';
 import { WhiskyService } from '../whisky.service';
 
 @Component({
-  selector: 'app-whiskys',
-  templateUrl: './whiskys.component.html',
-  styleUrls: ['./whiskys.component.css']
+  selector: 'app-dashboard',
+  templateUrl: './dashboard.component.html',
+  styleUrls: [ './dashboard.component.css' ]
 })
-export class WhiskysComponent implements OnInit {
-
-  whiskys : Whisky[];
+export class DashboardComponent implements OnInit {
+  whiskys: Whisky[] = [];
 
   constructor(private whiskyService: WhiskyService) { }
 
@@ -20,7 +18,6 @@ export class WhiskysComponent implements OnInit {
 
   getWhiskys(): void {
     this.whiskyService.getWhiskys()
-    .subscribe(whiskys => this.whiskys = whiskys);
+      .subscribe(whiskys => this.whiskys = whiskys.slice(1, 5));
   }
-
 }

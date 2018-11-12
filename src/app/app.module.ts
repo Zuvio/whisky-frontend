@@ -8,6 +8,8 @@ import { RetailersComponent } from './retailers/retailers.component';
 import { BreweriesComponent } from './breweries/breweries.component';
 import { WhiskysComponent } from './whiskys/whiskys.component';
 import { WhiskyDetailComponent } from './whisky-detail/whisky-detail.component';
+import { MessagesComponent } from './messages/messages.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { WhiskyDetailComponent } from './whisky-detail/whisky-detail.component';
     RetailersComponent,
     BreweriesComponent,
     WhiskysComponent,
-    WhiskyDetailComponent
+    WhiskyDetailComponent,
+    MessagesComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
