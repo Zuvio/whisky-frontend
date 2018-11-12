@@ -1,0 +1,63 @@
+Whisky Management System
+
+Een brouwerij kan: 
+- inloggen 
+- whisky's zien
+- nieuwe whisky's maken
+- adres wijzigen
+
+Een afnemer kan:
+- inloggen 
+- zien welke brouwerijen er zijn 
+- zien welke whisky's de brouwerijen aanbieden 
+- whisky's inkopen
+- adres wijzigen
+
+[brouwerij] 1 .. n [whiskey]
+[brouwerij] 1 .. n [adres]	-> geldigheidsperiode
+[brouwerij] n .. m [afnemer] 
+[afnemer] 1 .. n [adres]
+
+tabel brouwerij:
+- id
+- naam
+- adres_id
+
+tabel whisky:
+- id 
+- naam
+- type (malt/blend/bourbon)
+- inhoud (20cl/35/70cl/100cl)
+- leeftijd
+- prijs
+- beoordeling
+- brouwerij_id
+
+tabel afnemer:
+- id
+- naam
+- adres
+
+koppeltabel afnemer - whisky's
+- id
+- afnemer_id
+- whisky_id
+
+tabel adres:
+- id
+- straat
+- huisnummer
+- postcode
+- land
+
+koppeltabel afnemer-adres
+koppeltabel brouwerij-adres
+
+Dashboard:
+- toon 4 random whisky's in grote blokken
+- knop om naar dashboard te gaan
+- knop om naar brouwerijen te gaan
+- knop om naar whisky's te gaan 
+- dashboard: inloggen -> optie voor afnemer/brouwerij
+- na inloggen kan brouwerij whisky + of -
+- na inloggen kan afnemer whisky's bestellen
