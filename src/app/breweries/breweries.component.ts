@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { WhiskyService } from '../whisky.service';
+import { Brewery } from '../brewery';
 
 @Component({
   selector: 'app-breweries',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BreweriesComponent implements OnInit {
 
-  constructor() { }
+  breweries: Brewery[];
+
+  constructor(private whiskyService: WhiskyService) { }
 
   ngOnInit() {
+    this.getBreweries();
+  }
+
+  getBreweries(): void {
+    this.whiskyService.getBreweries()
+    .subscribe(breweries => this.breweries = breweries);
   }
 
 }

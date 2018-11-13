@@ -4,6 +4,7 @@ import { Observable, of } from 'rxjs';
 import { MessageService } from './message.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
+import { Brewery } from './brewery';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -16,6 +17,7 @@ export class WhiskyService {
 
   // private whiskyUrl = 'api/whiskys';  // URL to web api
   private whiskyUrl = 'http://localhost:8080/api/whiskys';  // URL to web api
+  private breweryUrl = 'http://localhost:8080/api/breweries';  // URL to web api
 
   constructor(
     private http: HttpClient,
@@ -28,7 +30,6 @@ export class WhiskyService {
 
 
   getWhiskys(): Observable<Whisky[]> {
-  // TODO: send the message _after_ fetching the whiskys
   this.messageService.add('WhiskyService: fetched whiskys');
   return this.http.get<Whisky[]>(this.whiskyUrl)
   .pipe(
@@ -37,12 +38,27 @@ export class WhiskyService {
   );
   }
 
-  /** GET hero by id. Will 404 if id not found */
   getWhisky(id: number): Observable<Whisky> {
     const url = `${this.whiskyUrl}/${id}`;
     return this.http.get<Whisky>(url).pipe(
       tap(_ => this.log(`fetched whisky id=${id}`)),
       catchError(this.handleError<Whisky>(`getWhisky id=${id}`))
+    );
+  }
+
+  getBreweries(): Observable<Brewery[]> {
+    this.messageService.add('WhiskyService: fetched brewery');
+    return this.http.get<Brewery[]>(this.breweryUrl)
+    .pipe(
+      tap(_ => this.log('fetched breweries')),
+      catchError(this.handleError('getBreweries', []))
+    );
+    }
+  getBrewery(id: number): Observable<Brewery> {
+    const url = `${this.breweryUrl}/${id}`;
+    return this.http.get<Brewery>(url).pipe(
+      tap(_ => this.log(`fetched brewery id=${id}`)),
+      catchError(this.handleError<Brewery>(`getBrewery id=${id}`))
     );
   }
 

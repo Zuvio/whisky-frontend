@@ -5,11 +5,13 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { WhiskyDetailComponent } from './whisky-detail/whisky-detail.component';
 import { BreweriesComponent } from './breweries/breweries.component';
 import { RetailersComponent} from './retailers/retailers.component';
+import { BreweryDetailComponent } from './brewery-detail/brewery-detail.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'dashboard', component: DashboardComponent },
-  { path: 'detail/:id', component: WhiskyDetailComponent },
+  { path: 'whiskydetail/:id', component: WhiskyDetailComponent },
+  { path: 'brewerydetail/:id', component: BreweryDetailComponent },
   { path: 'whiskys', component: WhiskysComponent },
   { path: 'breweries', component: BreweriesComponent },  
   { path: 'retailers', component: RetailersComponent } 

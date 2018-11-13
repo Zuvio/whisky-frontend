@@ -1,3 +1,10 @@
-<p>
-  breweries works!
-</p>
+<h2>List of all breweries</h2>
+<ul class="breweries">
+  <li *ngFor="let brewery of breweries">
+      <a routerLink="/brewerydetail/{{brewery.id}}">
+    <span class="badge">{{brewery.id}}</span> {{brewery.breweryName}}
+    </a>
+  </li>
+</ul>
+
+<app-brewery-detail [brewery]="selectedBrewery"></app-brewery-detail>

@@ -13,6 +13,7 @@ import { WhiskysComponent } from './whiskys/whiskys.component';
 import { WhiskyDetailComponent } from './whisky-detail/whisky-detail.component';
 import { MessagesComponent } from './messages/messages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { BreweryDetailComponent } from './brewery-detail/brewery-detail.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     WhiskysComponent,
     WhiskyDetailComponent,
     MessagesComponent,
-    DashboardComponent
+    DashboardComponent,
+    BreweryDetailComponent
   ],
   imports: [
     BrowserModule,

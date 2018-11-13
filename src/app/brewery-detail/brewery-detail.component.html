@@ -1,0 +1,7 @@
+<div *ngIf="brewery">
+  <h2>{{brewery.breweryName | uppercase}} Details</h2>
+  <div><span>id: </span>{{brewery.id}}</div>
+  <div><span>adres: </span>{{brewery.adresId}}</div>
+</div>
+
+<button (click)="goBack()">go back</button>

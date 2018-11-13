@@ -1,9 +1,19 @@
 <h3>Top Whiskys</h3>
 <div class="grid grid-pad">
   <a *ngFor="let whisky of whiskys" class="col-1-4"
-    routerLink="/detail/{{whisky.id}}">
+    routerLink="/whiskydetail/{{whisky.id}}">
     <div class="module whisky">
       <h4>{{whisky.whiskyName}}</h4>
+    </div>
+  </a>
+</div>
+
+<h3>Top Breweries</h3>
+<div class="grid grid-pad">
+  <a *ngFor="let brewery of breweries" class="col-1-4"
+    routerLink="/brewerydetail/{{brewery.id}}">
+    <div class="module brewery">
+      <h4>{{brewery.breweryName}}</h4>
     </div>
   </a>
 </div>
