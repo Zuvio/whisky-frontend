@@ -2,7 +2,7 @@
 <ul class="whiskys">
   <li *ngFor="let whisky of whiskys">
       <a routerLink="/detail/{{whisky.id}}">
-    <span class="badge">{{whisky.id}}</span> {{whisky.name}}
+    <span class="badge">{{whisky.id}}</span> {{whisky.whiskyName}}
     </a>
   </li>
 </ul>

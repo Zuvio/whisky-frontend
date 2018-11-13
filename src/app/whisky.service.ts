@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Whisky } from './whisky';
-import { WHISKYS } from './mock-whiskys';
 import { Observable, of } from 'rxjs';
 import { MessageService } from './message.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';

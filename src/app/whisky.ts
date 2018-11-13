@@ -1,10 +1,10 @@
 export class Whisky {
     id: number; 
-    name: string;
+    whiskyname: string;
     type: string;
     content: string;
-    age: number;
-    prize: number;
-    rating: number;
-    brewery_id: number;
+    age: string;
+    prize: string;
+    rating: string;
+    breweryid: string;
 }

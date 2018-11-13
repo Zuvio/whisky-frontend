@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Whisky } from '../whisky';
-import { WHISKYS } from '../mock-whiskys';
 import { WhiskyService } from '../whisky.service';
 
 @Component({
