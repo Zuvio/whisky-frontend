@@ -1,51 +1,53 @@
-<div>
-<label>Whisky: 
-<input [(ngModel)]="whisky.whiskyname" /> 
-<span>This is a required field</span>  
-</label>
-</div>
-
-<div><label>Type: <select [(ngModel)]="whisky.type">
-<option>Blend</option>
-<option>Single Malt</option>
-<option>Bourbon</option>
-</select></label></div>
+<p>                            </p>
 
 <div>
-<label>Content of bottle: 
-<select [(ngModel)]="whisky.content">
-<option>20cl</option>
-<option>35cl</option>
-<option>70cl</option>
-<option>1L</option>
-</select>
-</label>
-</div>
-
-<div>
-<label>Age: 
-<input [(ngModel)]="whisky.age" />
-</label>
-</div>
-
-<div>
-<label>Prize: 
-<input [(ngModel)]="whisky.prize" />
-</label>
-</div>
-
-<div>
-<label>Rating: 
-<input [(ngModel)]="whisky.rating" />
-</label>
-</div>
-
-<div>
-<label>Brewery: 
-<input [(ngModel)]="whisky.breweryid" />
-</label>
-</div>
-
-<div> 
-<button type="submit" (click)="add()">Submit</button>
-</div>
+        <label>Whisky: </label>
+        <input type="text" [(ngModel)]="whisky.whiskyname" /> 
+         This is a required field
+        </div>
+        
+        <div>
+            <label>Type: </label>
+                <select [(ngModel)]="whisky.type">
+        <option>Blend</option>
+        <option>Single Malt</option>
+        <option>Bourbon</option>
+        </select></div>
+        
+        <div>
+        <label>Content of bottle: </label>
+        <select [(ngModel)]="whisky.content">
+        <option>20cl</option>
+        <option>35cl</option>
+        <option>70cl</option>
+        <option>1L</option>
+        </select>        
+        </div>
+        
+        <div>
+        <label>Age: </label>
+        <input [(ngModel)]="whisky.age" />        
+        </div>
+        
+        <div>
+        <label>Prize: </label>
+        <input [(ngModel)]="whisky.prize" />        
+        </div>
+        
+        <div>
+        <label>Rating: </label>
+        <input [(ngModel)]="whisky.rating" />
+        
+        </div>
+        
+        <div>
+        <label>Brewery: </label>
+        <input type="text" [(ngModel)]="whisky.breweryid" />
+        <span> This is a required field</span>
+        
+        </div>
+        
+       <div>  
+        <button type="submit" (click)="add()">Submit</button>
+        </div>
+     
