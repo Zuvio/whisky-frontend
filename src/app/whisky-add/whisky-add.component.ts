@@ -17,6 +17,7 @@ export class WhiskyAddComponent implements OnInit {
   }
 
   add(): void {
+    console.log(this.whisky.breweryid);
     this.whiskyService.addWhisky(this.whisky)
       .subscribe();
   }
