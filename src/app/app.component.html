@@ -1,12 +1,16 @@
+
 <h1>{{ title }}</h1>
+
 <nav>
   <a routerLink="/dashboard">Dashboard</a>
   <a routerLink="/whiskys">Whiskys</a>
   <a routerLink="/breweries">Breweries</a>
   <a routerLink="/retailers">Retailers</a>
+  <a routerLink="/login">Login</a>
+  <a routerLink="/addwhisky">Add Whisky</a>
 </nav>
-
-<router-outlet></router-outlet>
+<div>
+<router-outlet></router-outlet></div>
 <app-messages></app-messages>
 
 <img width="350" src="../assets/images/bottle_main.jpg" style="float:right">

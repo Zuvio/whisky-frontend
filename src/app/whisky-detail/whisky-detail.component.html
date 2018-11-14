@@ -1,12 +1,12 @@
 <div *ngIf="whisky">
-        <h2>{{whisky.whiskyName | uppercase}} Details</h2>
+        <h2>{{whisky.whiskyname | uppercase}} Details</h2>
         <div><span>id: </span>{{whisky.id}}</div>
         <div><span>type: </span>{{whisky.type}}</div>
         <div><span>content: </span>{{whisky.content}}</div>
         <div><span>age: </span>{{whisky.age}}</div>
         <div><span>prize: </span>{{whisky.prize}}</div>
         <div><span>rating: </span>{{whisky.rating}}</div>
-        <div><span>brewery: </span>{{whisky.breweryId}}</div>
+        <div><span>brewery: </span>{{whisky.breweryid}}</div>
       </div>
 
       <button (click)="goBack()">go back</button>
