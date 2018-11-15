@@ -43,7 +43,7 @@
         <div>
         <label>Brewery: </label>
             <select [(ngModel)]="brewery.id">
-            <option *ngFor="let brewery of breweries" >{{brewery.id}}</option>
+            <option *ngFor="let brewery of breweries" [value]="brewery.id">{{brewery.id}}</option>
             </select>
         </div>
         

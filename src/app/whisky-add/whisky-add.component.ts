@@ -10,8 +10,8 @@ import { Brewery } from '../brewery';
 })
 export class WhiskyAddComponent implements OnInit {
 
-  @Input() whisky: Whisky = new Whisky();
-  @Input() brewery: Brewery = new Brewery();
+whisky: Whisky = new Whisky();
+brewery: Brewery = new Brewery();
 
   breweries: Brewery[];
 
