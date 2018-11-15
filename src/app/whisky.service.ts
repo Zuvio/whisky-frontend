@@ -43,13 +43,27 @@ export class WhiskyService {
     );
   }
 
-    /** POST: add a new hero to the server */
-    addWhisky(whisky: Whisky): Observable<Whisky> {
-      return this.http.post<Whisky>(this.whiskyUrl, whisky, httpOptions).pipe(
-        tap((whisky: Whisky) => this.log(`added whisky w/ id=${whisky.id}`)),
+    /** POST: add a new Whisky linked to a brewery*/
+    addWhisky(whisky: Whisky, brewery: Brewery): Observable<Whisky> {
+      const id = typeof brewery === 'number' ? brewery : brewery.id;
+      const url = `${this.breweryUrl}/${id}/whisky`;
+      var data = 
+
+      /** Nu eerst de object versie, dan moet je ook 'data' door 'whisky' vervangen in de http.post!!! 
+      // whisky.brewery = { "id": brewery.id}
+
+      /** dit is de uitgeschreven versie = beter! 'data' aan http.post meegeven */
+      {"whiskyname": whisky.whiskyname, "type": whisky.type, "content":whisky.content
+      ,"age":whisky.age, "prize":whisky.prize, "rating": whisky.rating
+      ,"brewery": { "id": brewery.id}};
+
+      console.log(data);
+      return this.http.post<Whisky>(url, data, httpOptions).pipe(
+        tap((whisky: Whisky) => this.log(`added whisky w/ id=${brewery.id}`)),
         catchError(this.handleError<Whisky>('addWhisky'))
       );
-      }
+}
+
 
   /** B R E W E R Y   F U N C T I O N S ---------------------------- */
 

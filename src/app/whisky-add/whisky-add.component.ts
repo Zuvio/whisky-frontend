@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Whisky } from '../whisky';
 import { WhiskyService } from '../whisky.service';
+import { Brewery } from '../brewery';
 
 @Component({
   selector: 'app-whisky-add',
@@ -9,17 +10,20 @@ import { WhiskyService } from '../whisky.service';
 })
 export class WhiskyAddComponent implements OnInit {
 
-  whisky = new Whisky;
+  @Input() whisky: Whisky = new Whisky();
+  @Input() brewery: Brewery = new Brewery();
+
 
   constructor(private whiskyService: WhiskyService) { }
 
   ngOnInit() {
   }
 
-  add(): void {
-    console.log(this.whisky.breweryid);
-    this.whiskyService.addWhisky(this.whisky)
+  add(whisky, voeding): void {
+    this.whiskyService.addWhisky(this.whisky, this.brewery)
       .subscribe();
   }
+
+  
 
 }
