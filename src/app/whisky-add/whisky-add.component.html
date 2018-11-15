@@ -42,12 +42,11 @@
         
         <div>
         <label>Brewery: </label>
-        <input type="text" [(ngModel)]="brewery.id" />
-        <span> This is a required field</span>
-        
+            <select [(ngModel)]="brewery.id">
+            <option *ngFor="let brewery of breweries" >{{brewery.id}}</option>
+            </select>
         </div>
         
        <div>  
-        <button type="submit" (click)="add()">Submit</button>
+        <button type="submit" (click)=add()>Submit</button>
         </div>
-     

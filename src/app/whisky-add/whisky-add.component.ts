@@ -13,10 +13,13 @@ export class WhiskyAddComponent implements OnInit {
   @Input() whisky: Whisky = new Whisky();
   @Input() brewery: Brewery = new Brewery();
 
+  breweries: Brewery[];
+
 
   constructor(private whiskyService: WhiskyService) { }
 
   ngOnInit() {
+    this.getBreweries();
   }
 
   add(whisky, voeding): void {
@@ -24,6 +27,12 @@ export class WhiskyAddComponent implements OnInit {
       .subscribe();
   }
 
+  getBreweries(): void {
+    this.whiskyService.getBreweries()
+    .subscribe(breweries => this.breweries = breweries);
+  }
+}
+
   
 
-}
+
