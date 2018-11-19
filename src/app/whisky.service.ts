@@ -1,10 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Whisky } from './whisky';
+import { Adres } from './adres';
+import { Brewery } from './brewery';
 import { Observable, of } from 'rxjs';
 import { MessageService } from './message.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
-import { Brewery } from './brewery';
+
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -80,6 +82,13 @@ export class WhiskyService {
     return this.http.get<Brewery>(url).pipe(
       tap(_ => this.log(`fetched brewery id=${id}`)),
       catchError(this.handleError<Brewery>(`getBrewery id=${id}`))
+    );
+  }
+  getAdres(id: number): Observable<Adres> {
+    const url = `${this.breweryUrl}/${id}/adres`;
+    return this.http.get<Adres>(url).pipe(
+      tap(_ => this.log(`fetched adres id=${id}`)),
+      catchError(this.handleError<Adres>(`getAdres id=${id}`))
     );
   }
 

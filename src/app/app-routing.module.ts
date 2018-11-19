@@ -8,6 +8,7 @@ import { RetailersComponent} from './retailers/retailers.component';
 import { BreweryDetailComponent } from './brewery-detail/brewery-detail.component';
 import { WhiskyAddComponent } from './whisky-add/whisky-add.component';
 import { LoginComponent } from './login/login.component';
+import { RegisterBreweryComponent } from './register-brewery/register-brewery.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
@@ -18,7 +19,9 @@ const routes: Routes = [
   { path: 'breweries', component: BreweriesComponent },  
   { path: 'retailers', component: RetailersComponent },
   { path: 'addwhisky', component: WhiskyAddComponent },
-  { path: 'login', component: LoginComponent }
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterBreweryComponent }
+
 ];
 
 @NgModule({

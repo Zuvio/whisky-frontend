@@ -14,6 +14,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { BreweryDetailComponent } from './brewery-detail/brewery-detail.component';
 import { WhiskyAddComponent } from './whisky-add/whisky-add.component';
 import { LoginComponent } from './login/login.component';
+import { RegisterBreweryComponent } from './register-brewery/register-brewery.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { LoginComponent } from './login/login.component';
     DashboardComponent,
     BreweryDetailComponent,
     WhiskyAddComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterBreweryComponent
   ],
   imports: [
     BrowserModule,

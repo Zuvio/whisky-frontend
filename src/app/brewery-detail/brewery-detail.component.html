@@ -1,9 +1,13 @@
 <div *ngIf="brewery">
   <h2>{{brewery.breweryName | uppercase}} Details</h2>
-  <div><span>id: </span>{{brewery.id}}</div>
-  <div><span>adres: </span>{{brewery.adres_id}}</div>
+  <div><span>breweryid: </span>{{brewery.id}}</div>
 </div>
 
-<div></div>
+<div *ngIf="adres">
+  <div><span>id: </span>{{adres.id}}</div>
+  <div><span>street+no.: </span>{{adres.street}} {{adres.number}}</div>
+  <div><span>postalcode: </span>{{adres.postalcode}}</div>
+  <div><span>country: </span>{{adres.country}}</div>
+</div>
 
 <button (click)="goBack()">go back</button>
