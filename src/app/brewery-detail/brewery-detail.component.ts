@@ -16,6 +16,7 @@ export class BreweryDetailComponent implements OnInit {
 
   @Input() brewery: Brewery;
   @Input() adres: Adres;
+  @Input() addresses: Adres[];
 
   constructor(
     private route: ActivatedRoute,
@@ -38,6 +39,11 @@ export class BreweryDetailComponent implements OnInit {
     const id = +this.route.snapshot.paramMap.get('id');
     this.whiskyService.getAdres(id)
     .subscribe(adres => this.adres = adres);
+  }
+
+  getAddresses(): void {
+    this.whiskyService.getAdresses()
+    .subscribe(addresses => this.addresses = addresses);
   }
 
   goBack(): void {

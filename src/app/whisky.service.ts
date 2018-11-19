@@ -76,7 +76,7 @@ export class WhiskyService {
       tap(_ => this.log('fetched breweries')),
       catchError(this.handleError('getBreweries', []))
     );
-    }
+  } 
   getBrewery(id: number): Observable<Brewery> {
     const url = `${this.breweryUrl}/${id}`;
     return this.http.get<Brewery>(url).pipe(
@@ -84,6 +84,14 @@ export class WhiskyService {
       catchError(this.handleError<Brewery>(`getBrewery id=${id}`))
     );
   }
+  getAdresses(): Observable<Adres[]> {
+    this.messageService.add('WhiskyService: fetched adres');
+    return this.http.get<Adres[]>(this.breweryUrl)
+    .pipe(
+      tap(_ => this.log('fetched adresses')),
+      catchError(this.handleError('getAdresses', []))
+    );
+  } 
   getAdres(id: number): Observable<Adres> {
     const url = `${this.breweryUrl}/${id}/adres`;
     return this.http.get<Adres>(url).pipe(
