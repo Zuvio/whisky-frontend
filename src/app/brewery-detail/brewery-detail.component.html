@@ -1,16 +1,30 @@
 <div *ngIf="brewery">
   <h2>{{brewery.breweryName | uppercase}} Details</h2>
-  <div><span>breweryid: </span>{{brewery.id}}</div>
+  <div><span>Brewery id: </span>{{brewery.id}}</div>
 </div>
 
 <div *ngIf="adres">
-  <div><span>id: </span>{{adres.id}}</div>
+  <h3>Current adres</h3>
+  <div><span>Adres id: </span>{{adres.id}}</div>
   <div><span>street+no.: </span>{{adres.street}} {{adres.number}}</div>
   <div><span>postalcode: </span>{{adres.postalcode}}</div>
   <div><span>country: </span>{{adres.country}}</div>
   <div><span>startdate: </span>{{adres.startdate}}</div>
   <div><span>enddate: </span>{{adres.stopdate}}</div>
 </div>
+
+<h2>List of all addresses</h2>
+<ul class="addresses">
+  <li *ngFor="let adres of addresses">
+    <div><span>Adres id: </span>{{adres.id}}</div>
+    <div><span>street+no.: </span>{{adres.street}} {{adres.number}}</div>
+    <div><span>postalcode: </span>{{adres.postalcode}}</div>
+    <div><span>country: </span>{{adres.country}}</div>
+    <div><span>startdate: </span>{{adres.startdate}}</div>
+    <div><span>enddate: </span>{{adres.stopdate}}</div>
+  </li>
+</ul>
+
 
 
 <button (click)="goBack()">go back</button>

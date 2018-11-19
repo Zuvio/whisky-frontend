@@ -16,7 +16,7 @@ export class BreweryDetailComponent implements OnInit {
 
   @Input() brewery: Brewery;
   @Input() adres: Adres;
-  @Input() addresses: Adres[];
+  addresses: Adres[];
 
   constructor(
     private route: ActivatedRoute,
@@ -27,6 +27,7 @@ export class BreweryDetailComponent implements OnInit {
   ngOnInit(): void {
     this.getBrewery();
     this.getAdres();
+    this.getAddresses();
   }
 
   getBrewery(): void {
@@ -42,7 +43,8 @@ export class BreweryDetailComponent implements OnInit {
   }
 
   getAddresses(): void {
-    this.whiskyService.getAdresses()
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.whiskyService.getAddresses(id)
     .subscribe(addresses => this.addresses = addresses);
   }
 
