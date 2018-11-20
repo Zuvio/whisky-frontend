@@ -93,12 +93,20 @@ export class WhiskyService {
     );
   } 
   getAdres(id: number): Observable<Adres> {
-    const url = `${this.breweryUrl}/${id}/adres`;
+    const url = `${this.breweryUrl}/${id}/currentadres`;
     return this.http.get<Adres>(url).pipe(
       tap(_ => this.log(`fetched adres id=${id}`)),
       catchError(this.handleError<Adres>(`getAdres id=${id}`))
     );
   }
+  findAddresses(country: string): Observable<Adres[]> {
+    const url = `http://localhost:8080/api/search/obv/country`;
+    this.messageService.add('WhiskyService: fetched adres on country search');
+    return this.http.get<Adres[]>(url).pipe(
+      tap(_ => this.log('fetched adresses from country')),
+      catchError(this.handleError('getAdresses', []))
+    );
+  } 
 
 
 

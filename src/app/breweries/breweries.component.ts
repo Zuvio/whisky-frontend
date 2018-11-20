@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { WhiskyService } from '../whisky.service';
 import { Brewery } from '../brewery';
+import { Adres } from '../adres';
 
 @Component({
   selector: 'app-breweries',
@@ -10,6 +11,7 @@ import { Brewery } from '../brewery';
 export class BreweriesComponent implements OnInit {
 
   breweries: Brewery[];
+  adrescountry: Adres[];
 
   constructor(private whiskyService: WhiskyService) { }
 
@@ -21,5 +23,7 @@ export class BreweriesComponent implements OnInit {
     this.whiskyService.getBreweries()
     .subscribe(breweries => this.breweries = breweries);
   }
+
+  
 
 }
