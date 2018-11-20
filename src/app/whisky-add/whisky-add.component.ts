@@ -22,7 +22,7 @@ brewery: Brewery = new Brewery();
     this.getBreweries();
   }
 
-  add(whisky, voeding): void {
+  add(whisky, brewery): void {
     this.whiskyService.addWhisky(this.whisky, this.brewery)
       .subscribe();
   }

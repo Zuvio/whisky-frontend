@@ -7,4 +7,31 @@
   </li>
 </ul>
 
+<div>
+  <label>Find breweries per country: </label>
+  <select [(ngModel)]="adres.country">
+  <option>NL</option>
+  <option>BE</option>
+  <option>DL</option>
+  <option>UK</option>
+  <option>US</option>
+  <option>RU</option>
+  <option>XX</option>
+  </select>        
+  </div>
+  <div>  
+    <button type="submit" (click)=search()>Submit</button>
+    </div>
 
+    <div *ngIf="adrescountry">
+      <ul class="adrescountry">
+        <li *ngFor="let adres of adrescountry">
+          <div><span>Adres id: </span>{{adres.id}}</div>
+          <div><span>street+no.: </span>{{adres.street}} {{adres.number}}</div>
+          <div><span>postalcode: </span>{{adres.postalcode}}</div>
+          <div><span>country: </span>{{adres.country}}</div>
+          <div><span>startdate: </span>{{adres.startdate}}</div>
+          <div><span>enddate: </span>{{adres.stopdate}}</div>
+        </li>
+      </ul>
+    </div>

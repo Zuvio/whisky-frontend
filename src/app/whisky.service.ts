@@ -6,6 +6,7 @@ import { Observable, of } from 'rxjs';
 import { MessageService } from './message.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
+import { URLSearchParams } from '@angular/http';
 
 
 const httpOptions = {
@@ -100,7 +101,7 @@ export class WhiskyService {
     );
   }
   findAddresses(country: string): Observable<Adres[]> {
-    const url = `http://localhost:8080/api/search/obv/country`;
+    const url = `http://localhost:8080/api/search/obv/country?country=${country}`;
     this.messageService.add('WhiskyService: fetched adres on country search');
     return this.http.get<Adres[]>(url).pipe(
       tap(_ => this.log('fetched adresses from country')),
