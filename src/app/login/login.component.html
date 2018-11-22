@@ -1,1 +1,22 @@
-<h1>!!!!DIT COMPONENT MOET NOG UITGEWERKT WORDEN!!!!</h1>
+<form action="action_page.php">
+      
+        <div class="container">
+          <label for="uname"><b>Username</b></label>
+          <input type="text" [(ngModel)]="user.name" placeholder="Enter Username" name="uname" required>
+      
+          <label for="psw"><b>Password</b></label>
+          <input type="password" [(ngModel)]="user.pass"  placeholder="Enter Password" name="psw" required>
+      
+          <button type="submit" (click)="login()">Login</button>
+          <label>
+            <input type="radio" name="selectuser" value="brewery" checked> Brewery <br>
+            <input type="radio" name="selectuser" value="retailer"> Retailer
+            
+        </label>
+        </div>
+      
+        <div class="container" style="background-color:#f1f1f1">
+          <button type="button" class="cancelbtn">Cancel</button>
+          <span class="psw">Forgot <a href="#">password?</a></span>
+        </div>
+      </form>
